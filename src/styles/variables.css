@@ -1,0 +1,638 @@
+/* ============================================
+   DERMA NATURA - CSS CUSTOM PROPERTIES
+   Premium Design System Variables v2.0
+   ============================================ */
+
+:root {
+  /* ==========================================
+     PRIMARY COLORS - Medical Spa Teal Palette
+     ========================================== */
+  --primary-50: #f0f9f7;
+  --primary-100: #d4f0ea;
+  --primary-200: #a9e1d5;
+  --primary-300: #7dd1bf;
+  --primary-400: #52c2aa;
+  --primary-500: #4A9B8E;  /* Main brand color */
+  --primary-600: #3d7f73;
+  --primary-700: #2d6b5f;
+  --primary-800: #1e564a;
+  --primary-900: #0e4235;
+  --primary-950: #062d24;
+
+  /* Primary with alpha */
+  --primary-500-rgb: 74, 155, 142;
+  --primary-alpha-10: rgba(74, 155, 142, 0.1);
+  --primary-alpha-20: rgba(74, 155, 142, 0.2);
+  --primary-alpha-30: rgba(74, 155, 142, 0.3);
+  --primary-alpha-50: rgba(74, 155, 142, 0.5);
+
+  /* ==========================================
+     ACCENT COLORS - Rose Gold / Blush
+     ========================================== */
+  --accent-50: #fef6f5;
+  --accent-100: #fde8e6;
+  --accent-200: #fbd1cd;
+  --accent-300: #f9bab3;
+  --accent-400: #f7a39a;
+  --accent-500: #D4A5A5;  /* Main accent color */
+  --accent-600: #c78989;
+  --accent-700: #b06d6d;
+  --accent-800: #995151;
+  --accent-900: #823535;
+  --accent-950: #5c1f1f;
+
+  /* Accent with alpha */
+  --accent-500-rgb: 212, 165, 165;
+  --accent-alpha-10: rgba(212, 165, 165, 0.1);
+  --accent-alpha-20: rgba(212, 165, 165, 0.2);
+  --accent-alpha-30: rgba(212, 165, 165, 0.3);
+  --accent-alpha-50: rgba(212, 165, 165, 0.5);
+
+  /* ==========================================
+     NEUTRAL COLORS - Grayscale
+     ========================================== */
+  --neutral-0: #ffffff;
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  --neutral-950: #0a0a0a;
+
+  /* Neutral with alpha */
+  --neutral-900-rgb: 23, 23, 23;
+  --neutral-alpha-5: rgba(0, 0, 0, 0.05);
+  --neutral-alpha-10: rgba(0, 0, 0, 0.1);
+  --neutral-alpha-20: rgba(0, 0, 0, 0.2);
+  --neutral-alpha-50: rgba(0, 0, 0, 0.5);
+  --neutral-alpha-80: rgba(0, 0, 0, 0.8);
+
+  /* White with alpha */
+  --white-alpha-10: rgba(255, 255, 255, 0.1);
+  --white-alpha-20: rgba(255, 255, 255, 0.2);
+  --white-alpha-30: rgba(255, 255, 255, 0.3);
+  --white-alpha-50: rgba(255, 255, 255, 0.5);
+  --white-alpha-70: rgba(255, 255, 255, 0.7);
+  --white-alpha-90: rgba(255, 255, 255, 0.9);
+
+  /* ==========================================
+     SEMANTIC COLORS
+     ========================================== */
+  --success: #10b981;
+  --success-light: #d1fae5;
+  --success-dark: #059669;
+  --error: #ef4444;
+  --error-light: #fee2e2;
+  --error-dark: #dc2626;
+  --warning: #f59e0b;
+  --warning-light: #fef3c7;
+  --warning-dark: #d97706;
+  --info: #3b82f6;
+  --info-light: #dbeafe;
+  --info-dark: #2563eb;
+
+  /* ==========================================
+     BACKGROUND COLORS
+     ========================================== */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #f5f5f5;
+  --bg-inverse: #171717;
+  
+  /* Gradient backgrounds */
+  --bg-accent: linear-gradient(135deg, #f0f9f7 0%, #fef6f5 100%);
+  --bg-hero: linear-gradient(135deg, 
+    rgba(240, 249, 247, 0.4) 0%, 
+    rgba(254, 246, 245, 0.4) 100%
+  );
+  --bg-hero-overlay: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  --bg-cta: linear-gradient(
+    135deg,
+    rgba(74, 155, 142, 0.05) 0%,
+    rgba(212, 165, 165, 0.05) 100%
+  );
+
+  /* ==========================================
+     GRADIENTS
+     ========================================== */
+  
+  /* Primary gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+  --gradient-primary-soft: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 100%);
+  --gradient-primary-vibrant: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-800) 100%);
+  
+  /* Accent gradients */
+  --gradient-accent: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-600) 100%);
+  --gradient-accent-soft: linear-gradient(135deg, var(--accent-300) 0%, var(--accent-500) 100%);
+  
+  /* Mixed gradients */
+  --gradient-brand: linear-gradient(135deg, var(--primary-500) 0%, var(--accent-500) 100%);
+  --gradient-brand-vibrant: linear-gradient(135deg, var(--primary-400) 0%, var(--accent-400) 100%);
+  --gradient-brand-soft: linear-gradient(135deg, var(--primary-100) 0%, var(--accent-100) 100%);
+  
+  /* Overlay gradients */
+  --gradient-fade-up: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  --gradient-fade-down: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  --gradient-fade-left: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  --gradient-fade-right: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  
+  /* Dark overlays */
+  --gradient-dark-up: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  --gradient-dark-down: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  
+  /* Soft backgrounds */
+  --gradient-soft: linear-gradient(135deg, #f8fffe 0%, #fff8f7 100%);
+  --gradient-mesh: radial-gradient(at 40% 20%, var(--primary-100) 0px, transparent 50%),
+                   radial-gradient(at 80% 0%, var(--accent-100) 0px, transparent 50%),
+                   radial-gradient(at 0% 50%, var(--primary-50) 0px, transparent 50%),
+                   radial-gradient(at 80% 50%, var(--accent-50) 0px, transparent 50%),
+                   radial-gradient(at 0% 100%, var(--primary-100) 0px, transparent 50%),
+                   radial-gradient(at 80% 100%, var(--accent-100) 0px, transparent 50%);
+  
+  /* Shimmer gradient */
+  --gradient-shimmer: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--white-alpha-30) 50%,
+    transparent 100%
+  );
+  
+  /* Instagram gradient (for social) */
+  --gradient-instagram: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+
+  /* ==========================================
+     TYPOGRAPHY - Font Families
+     ========================================== */
+  --font-serif: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+
+  /* ==========================================
+     TYPOGRAPHY - Font Sizes (Fluid)
+     ========================================== */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+  --text-7xl: 4.5rem;     /* 72px */
+  --text-8xl: 6rem;       /* 96px */
+  --text-9xl: 8rem;       /* 128px */
+
+  /* ==========================================
+     TYPOGRAPHY - Font Weights
+     ========================================== */
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  /* ==========================================
+     TYPOGRAPHY - Line Heights
+     ========================================== */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* ==========================================
+     TYPOGRAPHY - Letter Spacing
+     ========================================== */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ==========================================
+     SPACING SCALE
+     ========================================== */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;  /* 2px */
+  --space-1: 0.25rem;     /* 4px */
+  --space-1-5: 0.375rem;  /* 6px */
+  --space-2: 0.5rem;      /* 8px */
+  --space-2-5: 0.625rem;  /* 10px */
+  --space-3: 0.75rem;     /* 12px */
+  --space-3-5: 0.875rem;  /* 14px */
+  --space-4: 1rem;        /* 16px */
+  --space-5: 1.25rem;     /* 20px */
+  --space-6: 1.5rem;      /* 24px */
+  --space-7: 1.75rem;     /* 28px */
+  --space-8: 2rem;        /* 32px */
+  --space-9: 2.25rem;     /* 36px */
+  --space-10: 2.5rem;     /* 40px */
+  --space-11: 2.75rem;    /* 44px */
+  --space-12: 3rem;       /* 48px */
+  --space-14: 3.5rem;     /* 56px */
+  --space-16: 4rem;       /* 64px */
+  --space-20: 5rem;       /* 80px */
+  --space-24: 6rem;       /* 96px */
+  --space-28: 7rem;       /* 112px */
+  --space-32: 8rem;       /* 128px */
+  --space-36: 9rem;       /* 144px */
+  --space-40: 10rem;      /* 160px */
+  --space-44: 11rem;      /* 176px */
+  --space-48: 12rem;      /* 192px */
+  --space-52: 13rem;      /* 208px */
+  --space-56: 14rem;      /* 224px */
+  --space-60: 15rem;      /* 240px */
+  --space-64: 16rem;      /* 256px */
+  --space-72: 18rem;      /* 288px */
+  --space-80: 20rem;      /* 320px */
+  --space-96: 24rem;      /* 384px */
+
+  /* ==========================================
+     SHADOWS - Standard
+     ========================================== */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06), 
+               0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 
+               0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 
+               0 4px 6px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.10), 
+               0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+  --shadow-3xl: 0 35px 60px rgba(0, 0, 0, 0.20);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-none: 0 0 #0000;
+  
+  /* Colored shadows */
+  --shadow-primary: 0 4px 14px rgba(74, 155, 142, 0.25);
+  --shadow-primary-lg: 0 8px 24px rgba(74, 155, 142, 0.30);
+  --shadow-primary-xl: 0 12px 36px rgba(74, 155, 142, 0.35);
+  --shadow-accent: 0 4px 14px rgba(212, 165, 165, 0.25);
+  --shadow-accent-lg: 0 8px 24px rgba(212, 165, 165, 0.30);
+  
+  /* Glow shadows */
+  --shadow-glow-sm: 0 0 15px rgba(74, 155, 142, 0.3);
+  --shadow-glow-md: 0 0 30px rgba(74, 155, 142, 0.4);
+  --shadow-glow-lg: 0 0 50px rgba(74, 155, 142, 0.5);
+  --shadow-glow-accent: 0 0 30px rgba(212, 165, 165, 0.4);
+  
+  /* Elevation shadows (more realistic) */
+  --shadow-elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-elevation-2: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+  --shadow-elevation-3: 0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.10);
+  --shadow-elevation-4: 0 15px 25px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.05);
+  --shadow-elevation-5: 0 20px 40px rgba(0,0,0,0.20);
+
+  /* ==========================================
+     GLOW EFFECTS
+     ========================================== */
+  --primary-glow: rgba(74, 155, 142, 0.15);
+  --primary-glow-strong: rgba(74, 155, 142, 0.3);
+  --accent-glow: rgba(212, 165, 165, 0.15);
+  --accent-glow-strong: rgba(212, 165, 165, 0.3);
+  --white-glow: rgba(255, 255, 255, 0.5);
+
+  /* ==========================================
+     BORDER RADIUS
+     ========================================== */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-4xl: 48px;
+  --radius-full: 9999px;
+
+  /* ==========================================
+     BORDERS
+     ========================================== */
+  --border-width: 1px;
+  --border-width-2: 2px;
+  --border-width-4: 4px;
+  --border-color: var(--neutral-200);
+  --border-color-light: var(--neutral-100);
+  --border-color-dark: var(--neutral-300);
+  --border-color-focus: var(--primary-500);
+
+  /* ==========================================
+     TRANSITIONS - Durations
+     ========================================== */
+  --duration-instant: 0ms;
+  --duration-fastest: 75ms;
+  --duration-faster: 100ms;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+  --duration-slowest: 700ms;
+  --duration-lazy: 1000ms;
+  
+  /* Legacy aliases */
+  --transition-fastest: 100ms;
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 350ms;
+  --transition-slowest: 500ms;
+
+  /* ==========================================
+     EASING FUNCTIONS - Standard
+     ========================================== */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ==========================================
+     EASING FUNCTIONS - Premium Library
+     ========================================== */
+  
+  /* Bounce effects */
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-bounce-in: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --ease-bounce-out: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-bounce-in-out: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Elastic effects */
+  --ease-elastic-in: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+  --ease-elastic-out: cubic-bezier(0.5, 1.5, 0.5, 1);
+  --ease-elastic-in-out: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+  
+  /* Back effects (overshoot) */
+  --ease-back-in: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --ease-back-out: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-back-in-out: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Smooth effects */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-smooth-out: cubic-bezier(0, 0.55, 0.45, 1);
+  
+  /* Expo effects */
+  --ease-expo-in: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-expo-in-out: cubic-bezier(1, 0, 0, 1);
+  
+  /* Circ effects */
+  --ease-circ-in: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-circ-out: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-circ-in-out: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  
+  /* Spring effect */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --ease-spring-soft: cubic-bezier(0.25, 0.1, 0.25, 1.5);
+  --ease-spring-bouncy: cubic-bezier(0.5, 1.8, 0.5, 0.8);
+  
+  /* Custom premium easings */
+  --ease-premium: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-premium-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-snappy: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-elegant: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  /* ==========================================
+     ANIMATION DURATIONS
+     ========================================== */
+  --animation-duration-instant: 100ms;
+  --animation-duration-fast: 200ms;
+  --animation-duration-normal: 400ms;
+  --animation-duration-slow: 600ms;
+  --animation-duration-slower: 800ms;
+  --animation-duration-slowest: 1000ms;
+  --animation-duration-lazy: 1500ms;
+
+  /* ==========================================
+     Z-INDEX SCALE
+     ========================================== */
+  --z-negative: -1;
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-base: 1;
+  --z-docked: 10;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+  --z-max: 9999;
+
+  /* ==========================================
+     CONTAINER & LAYOUT
+     ========================================== */
+  --container-xs: 320px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+  --max-width: 1400px;
+  
+  /* Content padding for different screen sizes */
+  --content-padding: 1.5rem;
+  --content-padding-lg: 2rem;
+  --content-padding-xl: 3rem;
+
+  /* ==========================================
+     BLUR VALUES
+     ========================================== */
+  --blur-none: 0;
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 12px;
+  --blur-xl: 16px;
+  --blur-2xl: 24px;
+  --blur-3xl: 40px;
+
+  /* ==========================================
+     OPACITY VALUES
+     ========================================== */
+  --opacity-0: 0;
+  --opacity-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-25: 0.25;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-75: 0.75;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-95: 0.95;
+  --opacity-100: 1;
+
+  /* ==========================================
+     COMPONENT-SPECIFIC TOKENS
+     ========================================== */
+  
+  /* Buttons */
+  --btn-padding-x: 1.5rem;
+  --btn-padding-y: 0.75rem;
+  --btn-padding-x-sm: 1rem;
+  --btn-padding-y-sm: 0.5rem;
+  --btn-padding-x-lg: 2rem;
+  --btn-padding-y-lg: 1rem;
+  --btn-padding-x-xl: 2.5rem;
+  --btn-padding-y-xl: 1.25rem;
+  --btn-radius: var(--radius-full);
+  --btn-font-weight: var(--font-semibold);
+  --btn-transition: all var(--duration-normal) var(--ease-out);
+  
+  /* Cards */
+  --card-padding: 2rem;
+  --card-padding-sm: 1.5rem;
+  --card-padding-lg: 2.5rem;
+  --card-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-sm);
+  --card-shadow-hover: var(--shadow-lg);
+  --card-border: 1px solid var(--neutral-100);
+  --card-transition: all var(--duration-normal) var(--ease-out);
+  
+  /* Form inputs */
+  --input-padding-x: 1rem;
+  --input-padding-y: 0.875rem;
+  --input-radius: var(--radius-md);
+  --input-border: var(--border-width-2) solid var(--neutral-200);
+  --input-border-focus: var(--border-width-2) solid var(--primary-500);
+  --input-focus-ring: 0 0 0 3px var(--primary-glow);
+  --input-transition: all var(--duration-fast) var(--ease-out);
+  
+  /* Navigation */
+  --nav-height: 80px;
+  --nav-height-mobile: 64px;
+  --nav-blur: var(--blur-lg);
+  --nav-bg: var(--white-alpha-90);
+  --nav-shadow: var(--shadow-sm);
+  
+  /* Modal */
+  --modal-padding: 2rem;
+  --modal-radius: var(--radius-xl);
+  --modal-shadow: var(--shadow-2xl);
+  --modal-backdrop: var(--neutral-alpha-50);
+  --modal-max-width: 500px;
+  
+  /* Toast */
+  --toast-padding: 1rem 1.25rem;
+  --toast-radius: var(--radius-lg);
+  --toast-shadow: var(--shadow-lg);
+  
+  /* Tooltip */
+  --tooltip-padding: 0.5rem 0.75rem;
+  --tooltip-radius: var(--radius-md);
+  --tooltip-bg: var(--neutral-900);
+  --tooltip-color: var(--neutral-0);
+  --tooltip-font-size: var(--text-sm);
+
+  /* ==========================================
+     PORTRAIT/IMAGE DIMENSIONS
+     ========================================== */
+  --portrait-size-sm: 150px;
+  --portrait-size-md: 200px;
+  --portrait-size-lg: 280px;
+  --portrait-size-xl: 350px;
+
+  /* ==========================================
+     ASPECT RATIOS
+     ========================================== */
+  --aspect-square: 1 / 1;
+  --aspect-video: 16 / 9;
+  --aspect-portrait: 3 / 4;
+  --aspect-landscape: 4 / 3;
+  --aspect-wide: 21 / 9;
+
+  /* ==========================================
+     SCROLL SNAP
+     ========================================== */
+  --scroll-margin: 80px;
+  --scroll-padding: 80px;
+}
+
+/* ==========================================
+   DARK MODE SUPPORT (Optional)
+   ========================================== */
+@media (prefers-color-scheme: dark) {
+  :root.dark-mode {
+    --bg-primary: #0f0f0f;
+    --bg-secondary: #171717;
+    --bg-tertiary: #1f1f1f;
+    
+    --neutral-50: #262626;
+    --neutral-100: #1f1f1f;
+    --neutral-200: #2a2a2a;
+    --neutral-300: #404040;
+    --neutral-400: #525252;
+    --neutral-500: #737373;
+    --neutral-600: #a3a3a3;
+    --neutral-700: #d4d4d4;
+    --neutral-800: #e5e5e5;
+    --neutral-900: #fafafa;
+    
+    --border-color: var(--neutral-200);
+    --border-color-light: var(--neutral-100);
+    --border-color-dark: var(--neutral-300);
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION PREFERENCES
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-fastest: 0ms;
+    --duration-faster: 0ms;
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+    --duration-slowest: 0ms;
+    --animation-duration-instant: 0ms;
+    --animation-duration-fast: 0ms;
+    --animation-duration-normal: 0ms;
+    --animation-duration-slow: 0ms;
+  }
+}
+
+/* ==========================================
+   MEDIA QUERY BREAKPOINTS (Reference)
+   - xs: 0px
+   - sm: 640px
+   - md: 768px
+   - lg: 1024px
+   - xl: 1280px
+   - 2xl: 1536px
+   ========================================== */

@@ -1,0 +1,854 @@
+/* ============================================
+   NAVBAR - PREMIUM RESPONSIVE NAVIGATION
+   Desktop + Mobile with Animations
+   ============================================ */
+
+/* ==========================================
+   CSS CUSTOM PROPERTIES (Local)
+   ========================================== */
+
+.navbar {
+  /* Timings */
+  --nav-transition: 0.3s;
+  --nav-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nav-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Heights */
+  --nav-height: 80px;
+  --nav-height-scrolled: 70px;
+  
+  /* Colors */
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
+}
+
+/* ==========================================
+   NAVBAR BASE
+   ========================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  z-index: 1000;
+  transition: 
+    height var(--nav-transition) var(--nav-ease),
+    background var(--nav-transition) var(--nav-ease),
+    transform var(--nav-transition) var(--nav-ease),
+    box-shadow var(--nav-transition) var(--nav-ease);
+}
+
+/* Scrolled State */
+.navbar.scrolled {
+  height: var(--nav-height-scrolled);
+  background: var(--nav-bg-scrolled);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 
+    0 1px 0 rgba(0, 0, 0, 0.05),
+    0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Visibility States */
+.navbar.visible {
+  transform: translateY(0);
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+/* ==========================================
+   CONTAINER
+   ========================================== */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+/* ==========================================
+   LOGO
+   ========================================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  z-index: 10;
+  transition: transform var(--nav-transition) var(--nav-ease);
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+  border-radius: 10px;
+  color: white;
+  transition: transform var(--nav-transition) var(--nav-ease);
+}
+
+.logo:hover .logoIcon {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logoIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.logoText {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.logoMain {
+  color: var(--neutral-900);
+}
+
+.logoAccent {
+  color: var(--primary-500);
+}
+
+@media (min-width: 768px) {
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+  
+  .logoIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .logoText {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==========================================
+   DESKTOP NAVIGATION
+   ========================================== */
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+/* Nav Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--neutral-600);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all var(--nav-transition) var(--nav-ease);
+}
+
+.navLink:hover {
+  color: var(--neutral-900);
+  background: var(--neutral-100);
+}
+
+.navLink.active {
+  color: var(--primary-600);
+}
+
+.navLinkText {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated Underline */
+.navLinkUnderline {
+  position: absolute;
+  bottom: 6px;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: var(--primary-500);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--nav-transition) var(--nav-ease);
+}
+
+.navLink:hover .navLinkUnderline,
+.navLink.active .navLinkUnderline {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ==========================================
+   CTA BUTTON
+   ========================================== */
+
+.ctaButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+  color: white;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  overflow: hidden;
+  transition: all var(--nav-transition) var(--nav-ease);
+  box-shadow: 0 4px 15px rgba(74, 155, 142, 0.25);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 155, 142, 0.35);
+}
+
+.ctaText {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaIcon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 18px;
+  height: 18px;
+  transition: transform var(--nav-transition) var(--nav-ease);
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translateX(3px);
+}
+
+.ctaGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s var(--nav-ease);
+}
+
+.ctaButton:hover .ctaGlow {
+  transform: translate(-50%, -50%) scale(2);
+}
+
+/* ==========================================
+   MOBILE MENU BUTTON
+   ========================================== */
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1010;
+  padding: 0;
+  transition: transform var(--nav-transition) var(--nav-ease);
+}
+
+.menuButton:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 1024px) {
+  .menuButton {
+    display: none;
+  }
+}
+
+.menuButtonInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 20px;
+  position: relative;
+}
+
+.menuLine {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--neutral-900);
+  border-radius: 2px;
+  transition: all var(--nav-transition) var(--nav-ease);
+}
+
+.menuLine:nth-child(1) {
+  top: 0;
+}
+
+.menuLine:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menuLine:nth-child(3) {
+  bottom: 0;
+}
+
+/* Menu Open State */
+.menuButton.menuOpen .menuLine:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.menuButton.menuOpen .menuLine:nth-child(2) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.menuButton.menuOpen .menuLine:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* ==========================================
+   PROGRESS BAR
+   ========================================== */
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.navbar.scrolled .progressBar {
+  background: var(--neutral-100);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-500), var(--accent-500));
+  transition: width 0.1s linear;
+}
+
+/* ==========================================
+   MOBILE OVERLAY
+   ========================================== */
+
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1001;
+  transition: all var(--nav-transition) var(--nav-ease);
+}
+
+.mobileOverlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 1024px) {
+  .mobileOverlay {
+    display: none;
+  }
+}
+
+/* ==========================================
+   MOBILE MENU DRAWER
+   ========================================== */
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  height: 100dvh;
+  background: white;
+  z-index: 1002;
+  transform: translateX(100%);
+  transition: transform 0.4s var(--nav-ease);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+@media (min-width: 1024px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+/* ==========================================
+   MOBILE MENU HEADER
+   ========================================== */
+
+.mobileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.mobileLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--neutral-100);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--neutral-600);
+  transition: all var(--nav-transition) var(--nav-ease);
+}
+
+.closeButton:hover {
+  background: var(--neutral-200);
+  color: var(--neutral-900);
+}
+
+.closeButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==========================================
+   MOBILE NAVIGATION LINKS
+   ========================================== */
+
+.mobileNav {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.mobileLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobileLinkItem {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: 
+    opacity 0.4s var(--nav-ease),
+    transform 0.4s var(--nav-ease);
+  transition-delay: calc(var(--index) * 0.05s + 0.1s);
+}
+
+.mobileMenu.open .mobileLinkItem {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all var(--nav-transition) var(--nav-ease);
+}
+
+.mobileLink:hover,
+.mobileLink.active {
+  background: var(--neutral-50);
+}
+
+.mobileLinkNumber {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-500);
+  opacity: 0.5;
+}
+
+.mobileLinkText {
+  flex: 1;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+}
+
+.mobileLink.active .mobileLinkText {
+  color: var(--primary-600);
+}
+
+.mobileLinkArrow {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  color: var(--neutral-400);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all var(--nav-transition) var(--nav-ease);
+}
+
+.mobileLinkArrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mobileLink:hover .mobileLinkArrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--primary-500);
+}
+
+/* ==========================================
+   MOBILE CTA
+   ========================================== */
+
+.mobileCta {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.mobileCtaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all var(--nav-transition) var(--nav-ease);
+  box-shadow: 0 4px 15px rgba(74, 155, 142, 0.3);
+}
+
+.mobileCtaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 155, 142, 0.4);
+}
+
+.mobileCtaButton svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--nav-transition) var(--nav-ease);
+}
+
+.mobileCtaButton:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   MOBILE FOOTER
+   ========================================== */
+
+.mobileFooter {
+  padding: 1.5rem;
+  border-top: 1px solid var(--neutral-100);
+  background: var(--neutral-50);
+}
+
+.mobileContact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobileContactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--neutral-600);
+  text-decoration: none;
+  transition: color var(--nav-transition) var(--nav-ease);
+}
+
+.mobileContactItem:hover {
+  color: var(--primary-600);
+}
+
+.mobileContactItem svg {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-500);
+}
+
+/* Social Links */
+.mobileSocials {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobileSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: white;
+  border: 1px solid var(--neutral-200);
+  border-radius: 12px;
+  color: var(--neutral-600);
+  text-decoration: none;
+  transition: all var(--nav-transition) var(--nav-ease);
+}
+
+.mobileSocialLink:hover {
+  background: var(--neutral-900);
+  border-color: var(--neutral-900);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.mobileSocialLink svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Copyright */
+.mobileCopyright {
+  font-size: 0.75rem;
+  color: var(--neutral-400);
+  text-align: center;
+  margin: 0;
+}
+
+/* ==========================================
+   MOBILE DECORATIVE ELEMENTS
+   ========================================== */
+
+.mobileDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.mobileDecorCircle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.mobileDecorCircle:nth-child(1) {
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(74, 155, 142, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+.mobileDecorCircle:nth-child(2) {
+  bottom: -150px;
+  left: -100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 165, 165, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+/* ==========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 359px) {
+  .logoText {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mobileMenu {
+    max-width: 450px;
+  }
+  
+  .mobileLinkText {
+    font-size: 1.375rem;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .logo,
+  .logoIcon,
+  .navLink,
+  .navLinkUnderline,
+  .ctaButton,
+  .ctaIcon,
+  .ctaGlow,
+  .menuButton,
+  .menuLine,
+  .mobileOverlay,
+  .mobileMenu,
+  .mobileLinkItem,
+  .mobileLink,
+  .mobileLinkArrow,
+  .mobileCtaButton,
+  .mobileContactItem,
+  .mobileSocialLink,
+  .closeButton {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .mobileLinkItem {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .navbar.hidden {
+    transform: none;
+  }
+  
+  .logo:hover,
+  .ctaButton:hover,
+  .mobileCtaButton:hover,
+  .mobileSocialLink:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+  .navbar,
+  .mobileMenu,
+  .mobileOverlay {
+    display: none !important;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY FOCUS STATES
+   ========================================== */
+
+.navLink:focus-visible,
+.ctaButton:focus-visible,
+.logo:focus-visible,
+.menuButton:focus-visible,
+.closeButton:focus-visible,
+.mobileLink:focus-visible,
+.mobileCtaButton:focus-visible,
+.mobileContactItem:focus-visible,
+.mobileSocialLink:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   DARK MODE SUPPORT (Optional)
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+  .navbar:not(.scrolled) {
+    /* Keep transparent for dark backgrounds */
+  }
+  
+  /* Add dark mode styles if needed */
+}

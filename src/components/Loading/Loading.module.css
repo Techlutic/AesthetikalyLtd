@@ -1,0 +1,188 @@
+/* ============================================
+   LOADING COMPONENT STYLES
+   Premium loading states with animations
+   ============================================ */
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, #fafcfb 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================
+   LOADING CONTENT
+   ========================================== */
+
+.loadingContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ==========================================
+   SPINNER
+   ========================================== */
+
+.spinnerWrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+}
+
+.spinnerRing {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+.spinnerRing:nth-child(1) {
+  border-top-color: var(--primary-500, #4A9B8E);
+  animation: spin 1.2s linear infinite;
+}
+
+.spinnerRing:nth-child(2) {
+  inset: 8px;
+  border-right-color: var(--primary-400, #52c2aa);
+  animation: spin 1.5s linear infinite reverse;
+}
+
+.spinnerRing:nth-child(3) {
+  inset: 16px;
+  border-bottom-color: var(--primary-300, #7dd1bf);
+  animation: spin 1.8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Center Logo */
+.spinnerLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  color: var(--primary-500, #4A9B8E);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.spinnerLogo svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* ==========================================
+   LOADING TEXT
+   ========================================== */
+
+.loadingText {
+  display: flex;
+  align-items: center;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--neutral-500, #737373);
+}
+
+.dots {
+  display: inline-flex;
+  margin-left: 2px;
+}
+
+.dots span {
+  animation: dotBounce 1.4s ease-in-out infinite;
+}
+
+.dots span:nth-child(1) { animation-delay: 0s; }
+.dots span:nth-child(2) { animation-delay: 0.2s; }
+.dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotBounce {
+  0%, 80%, 100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   SKELETON PREVIEW
+   ========================================== */
+
+.skeletonPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  opacity: 0.5;
+}
+
+.skeletonLine {
+  height: 12px;
+  background: linear-gradient(
+    90deg,
+    var(--neutral-200, #e5e5e5) 25%,
+    var(--neutral-100, #f5f5f5) 50%,
+    var(--neutral-200, #e5e5e5) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 6px;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .spinnerRing,
+  .spinnerLogo,
+  .dots span,
+  .skeletonLine {
+    animation: none;
+  }
+  
+  .spinnerRing:nth-child(1) {
+    border-color: var(--primary-500, #4A9B8E);
+  }
+}
